@@ -1,15 +1,14 @@
-export function insertionSort(books) {
-    books.forEach((_, index) => {
-        let currentBookIndex = index;
-        while (currentBookIndex > 0 && books[currentBookIndex].price < books[currentBookIndex -1]. price) {
-            let currentBook = books[currentBookIndex];
+import { changeIndex } from "./change";
 
-            books[currentBookIndex] = books[currentBookIndex - 1];
-            books[currentBookIndex - 1] = currentBook;
+export function insertionSort(products) {
+    products.forEach((_, index) => {
+        let currentIndex = index;
+        while (currentIndex > 0 && products[currentIndex].price < products[currentIndex -1].price) {
+            changeIndex(products, currentIndex);
             
-            currentBookIndex--;
+            currentIndex--;
         }
     });
 
-    return books;
+    return products;
 }
